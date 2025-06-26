@@ -1,7 +1,8 @@
 import axios, { type AxiosInstance } from "axios";
 import { BucketMapper } from "@/s3-sdk-mapper";
 import S3SDK from "@/s3-sdk-abstract";
-import { type BucketListVO } from "@/s3-sdk-vo";
+import { type BucketListVO, type ObjectListVO } from "@/s3-sdk-vo";
+import type { QueryObjectListDTO } from "@/s3-sdk-dto";
 
 class S3SDKImpl implements S3SDK {
   accessKey: string;
@@ -31,8 +32,8 @@ class S3SDKImpl implements S3SDK {
 
   async queryBucketList(): Promise<BucketListVO> {
     const result = await this.bucketMapper.getService();
-    const { data } = result;
-    if (data.Buckets && Array.isArray(data.Buckets)) {
+    const { status, data } = result;
+    if (status === 200) {
       return {
         code: 200,
         message: "Bucket list retrieved successfully",
@@ -48,7 +49,34 @@ class S3SDKImpl implements S3SDK {
     return {
       code: 500,
       message: "Failed to retrieve bucket list",
-      data: [],
+    };
+  }
+
+  async queryObjectList(
+    bucketName: string,
+    options?: Partial<QueryObjectListDTO>,
+  ): Promise<ObjectListVO> {
+    const result = await this.bucketMapper.getBucket(bucketName, options);
+    const { status, data } = result;
+    if (status === 200) {
+      return {
+        code: 200,
+        message: "Object list retrieved successfully",
+        data: {
+          startTime: data.StartTime,
+          endTime: data.EndTime,
+          hasNext: data.HasNext,
+          contents: data.Contents.map((item) => ({
+            fileName: item.Key,
+            changeTime: item.LastModified,
+            size: item.Size,
+          })),
+        },
+      };
+    }
+    return {
+      code: 500,
+      message: "Failed to retrieve object list",
     };
   }
 }

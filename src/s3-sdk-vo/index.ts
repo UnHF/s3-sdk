@@ -1,7 +1,7 @@
 interface BaseVO<T> {
   code: number;
   message: string;
-  data: T;
+  data?: T;
 }
 
 export type BucketListVO = BaseVO<
@@ -13,3 +13,14 @@ export type BucketListVO = BaseVO<
     region: string;
   }>
 >;
+
+export type ObjectListVO = BaseVO<{
+  startTime: string;
+  endTime: string;
+  hasNext: boolean;
+  contents: Array<{
+    fileName: string;
+    changeTime: string;
+    size: number;
+  }>;
+}>;
