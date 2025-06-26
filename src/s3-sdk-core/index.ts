@@ -1,7 +1,7 @@
 import axios, { type AxiosInstance } from 'axios';
 import { BucketMapper } from "@/s3-sdk-mapper";
 import S3SDK from '@/s3-sdk-abstract';
-import { type BucketListVO } from './vo';
+import { type BucketListVO } from '@/s3-sdk-vo';
 
 class S3SDKImpl implements S3SDK {
     accessKey: string;
