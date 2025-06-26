@@ -1,8 +1,17 @@
 import axios, { type AxiosInstance } from "axios";
 import { BucketMapper, ObjectMapper } from "@/s3-sdk-mapper";
 import S3SDK from "@/s3-sdk-abstract";
-import { type BucketListVO, type ObjectListVO } from "@/s3-sdk-vo";
-import type { QueryObjectListDTO, UploadObjectDTO } from "@/s3-sdk-dto";
+import {
+  type BucketListVO,
+  type ObjectListVO,
+  type QueryObjectVO,
+  type UploadObjectVO,
+} from "@/s3-sdk-vo";
+import type {
+  QueryObjectDTO,
+  QueryObjectListDTO,
+  UploadObjectDTO,
+} from "@/s3-sdk-dto";
 
 class S3SDKImpl implements S3SDK {
   accessKey: string;
@@ -79,7 +88,7 @@ class S3SDKImpl implements S3SDK {
     };
   }
 
-  async uploadObject(params: UploadObjectDTO) {
+  async uploadObject(params: UploadObjectDTO): Promise<UploadObjectVO> {
     const result = await this.objectMapper.putObject(params);
     const { status } = result;
     if (status === 200) {
@@ -91,6 +100,22 @@ class S3SDKImpl implements S3SDK {
     return {
       code: 500,
       message: "Failed to retrieve object list",
+    };
+  }
+
+  async queryObject(params: QueryObjectDTO): Promise<QueryObjectVO> {
+    const result = await this.objectMapper.getObject(params);
+    const { status, data } = result;
+    if (status === 200) {
+      return {
+        code: 200,
+        message: "Object retrieved successfully",
+        data: data,
+      };
+    }
+    return {
+      code: 500,
+      message: "Failed to retrieve object",
     };
   }
 }

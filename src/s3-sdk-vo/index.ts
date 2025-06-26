@@ -24,3 +24,7 @@ export type ObjectListVO = BaseVO<{
     size: number;
   }>;
 }>;
+
+export type UploadObjectVO = BaseVO<void>;
+
+export type QueryObjectVO = BaseVO<string>;

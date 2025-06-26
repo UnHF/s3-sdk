@@ -13,3 +13,8 @@ export interface UploadObjectDTO {
   objectName: string;
   file: Buffer<ArrayBufferLike>;
 }
+
+export interface QueryObjectDTO {
+  bucketName: string;
+  objectName: string;
+}
