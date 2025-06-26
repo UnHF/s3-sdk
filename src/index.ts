@@ -1,1 +1,1 @@
-export const greeting = "Hello from the Bun module!";   
+export { S3SDK } from "@unhf/s3-sdk-core";
