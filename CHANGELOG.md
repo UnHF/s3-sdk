@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.6
+
+[compare changes](https://github.com/UnHF/s3-sdk/compare/v0.0.5...v0.0.6)
+
+### 🚀 Enhancements
+
+- 新增列举对象功能 ([f3cec7a](https://github.com/UnHF/s3-sdk/commit/f3cec7a))
+
+### ❤️ Contributors
+
+- Heyongqi10 ([@xxhls](https://github.com/xxhls))
+
 ## v0.0.5
 
 [compare changes](https://github.com/UnHF/s3-sdk/compare/v0.0.3...v0.0.5)
