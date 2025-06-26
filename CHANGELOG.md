@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.9
+
+[compare changes](https://github.com/UnHF/s3-sdk/compare/v0.0.8...v0.0.9)
+
+### 🚀 Enhancements
+
+- 新增下载对象接口 ([936a654](https://github.com/UnHF/s3-sdk/commit/936a654))
+
+### ❤️ Contributors
+
+- Heyongqi10 ([@xxhls](https://github.com/xxhls))
+
 ## v0.0.8
 
 [compare changes](https://github.com/UnHF/s3-sdk/compare/v0.0.7...v0.0.8)
