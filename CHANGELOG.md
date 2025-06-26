@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.0.8
+
+[compare changes](https://github.com/UnHF/s3-sdk/compare/v0.0.7...v0.0.8)
+
+### 🚀 Enhancements
+
+- 抽离MapperObj ([411a983](https://github.com/UnHF/s3-sdk/commit/411a983))
+- 新增上传文件接口 ([cc943e5](https://github.com/UnHF/s3-sdk/commit/cc943e5))
+
+### 🏡 Chore
+
+- **release:** V0.0.7 ([ae91246](https://github.com/UnHF/s3-sdk/commit/ae91246))
+
+### ❤️ Contributors
+
+- Heyongqi10 ([@xxhls](https://github.com/xxhls))
+
 ## v0.0.7
 
 [compare changes](https://github.com/UnHF/s3-sdk/compare/v0.0.6...v0.0.7)
