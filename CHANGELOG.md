@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.5
+
+[compare changes](https://github.com/UnHF/s3-sdk/compare/v0.0.3...v0.0.5)
+
+### 🚀 Enhancements
+
+- 重新配置crypto引入 ([0167ebe](https://github.com/UnHF/s3-sdk/commit/0167ebe))
+
+### ❤️ Contributors
+
+- Heyongqi10 ([@xxhls](https://github.com/xxhls))
+
 ## v0.0.4
 
 [compare changes](https://github.com/UnHF/s3-sdk/compare/v0.0.3...v0.0.4)
