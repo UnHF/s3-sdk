@@ -1,6 +1,6 @@
 {
   "name": "@unhf/s3-sdk",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "workspaces": [
     "packages/*"
   ],
@@ -18,21 +18,25 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/index.d.mts",
-      "default": "./dist/index.mjs"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js",
+      "default": "./dist/index.es.js"
     }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "unbuild",
-    "dev": "vitest dev",
+    "build": "vite build",
+    "build:watch": "vite build --watch",
+    "dev": "vite",
+    "preview": "vite preview",
     "lint": "eslint . && prettier -c .",
     "lint:fix": "automd && eslint . --fix && prettier -w .",
-    "prepack": "pnpm build",
-    "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags",
-    "test": "pnpm lint && pnpm test:types && vitest run --coverage",
+    "prepack": "npm run build",
+    "release": "changelogen --release && npm publish && git push --follow-tags",
+    "test": "npm run lint && npm run test:types && vitest run --coverage",
     "test:types": "tsc --noEmit --skipLibCheck"
   },
   "devDependencies": {
@@ -43,13 +47,12 @@
     "eslint": "9.29.0",
     "eslint-config-unjs": "0.4.2",
     "prettier": "3.6.1",
-    "unbuild": "3.5.0",
+    "typescript": "5.8.3",
+    "vite": "7.0.0",
+    "vite-plugin-dts": "4.5.4",
     "vitest": "3.2.4"
   },
   "peerDependencies": {
-    "typescript": "5.8.3"
-  },
-  "dependencies": {
     "axios": "1.10.0",
     "crypto": "1.0.1"
   }
