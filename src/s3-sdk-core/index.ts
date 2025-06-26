@@ -3,6 +3,7 @@ import { BucketMapper, ObjectMapper } from "@/s3-sdk-mapper";
 import S3SDK from "@/s3-sdk-abstract";
 import {
   type BucketListVO,
+  type DeleteObjectVO,
   type ObjectListVO,
   type QueryObjectVO,
   type UploadObjectVO,
@@ -10,6 +11,7 @@ import {
 import type {
   QueryObjectDTO,
   QueryObjectListDTO,
+  RemoveObjectDTO,
   UploadObjectDTO,
 } from "@/s3-sdk-dto";
 
@@ -116,6 +118,22 @@ class S3SDKImpl implements S3SDK {
     return {
       code: 500,
       message: "Failed to retrieve object",
+    };
+  }
+
+  async removeObject(params: RemoveObjectDTO): Promise<DeleteObjectVO> {
+    const result = await this.objectMapper.deleteObject(params);
+    const { status } = result;
+    console.log("Remove Object Result:", status);
+    if (status === 204) {
+      return {
+        code: 200,
+        message: "Object removed successfully",
+      };
+    }
+    return {
+      code: 500,
+      message: "Failed to remove object",
     };
   }
 }

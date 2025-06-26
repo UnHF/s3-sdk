@@ -18,3 +18,8 @@ export interface QueryObjectDTO {
   bucketName: string;
   objectName: string;
 }
+
+export interface RemoveObjectDTO {
+  bucketName: string;
+  objectName: string;
+}

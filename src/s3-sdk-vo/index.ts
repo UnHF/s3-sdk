@@ -28,3 +28,5 @@ export type ObjectListVO = BaseVO<{
 export type UploadObjectVO = BaseVO<void>;
 
 export type QueryObjectVO = BaseVO<string>;
+
+export type DeleteObjectVO = BaseVO<void>;

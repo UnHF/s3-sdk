@@ -32,11 +32,18 @@ const main = async () => {
   //   file: fs.readFileSync(path.resolve(__dirname, "test.txt")),
   // });
 
-  s3.queryObject({
+  // s3.queryObject({
+  //   bucketName: "hour-main-dev",
+  //   objectName: "圣剑_holy-sword.png",
+  // }).then((res) => {
+  //   console.log("Query Object Result:", res);
+  // });
+
+  s3.removeObject({
     bucketName: "hour-main-dev",
     objectName: "圣剑_holy-sword.png",
   }).then((res) => {
-    console.log("Query Object Result:", res);
+    console.log("Remove Object Result:", res);
   });
 };
 
