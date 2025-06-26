@@ -1,4 +1,4 @@
-import { createHmac } from "node:crypto";
+import { createHmac } from "crypto";
 
 /**
  * 🔐 生成S3 API请求签名

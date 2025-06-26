@@ -6,6 +6,7 @@ export default unjs({
   ],
   rules: {
     // rule overrides
+    "unicorn/prefer-node-protocol": "off",
   },
   markdown: {
     rules: {
