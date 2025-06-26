@@ -6,6 +6,10 @@
     "type": "git",
     "url": "git@github.com:UnHF/s3-sdk.git"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
