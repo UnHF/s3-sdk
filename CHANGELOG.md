@@ -1,6 +1,28 @@
 # Changelog
 
 
+## v0.0.2
+
+[compare changes](https://github.com/UnHF/s3-sdk/compare/v0.0.1...v0.0.2)
+
+### 🚀 Enhancements
+
+- 更新package的依赖关系 ([66d4468](https://github.com/UnHF/s3-sdk/commit/66d4468))
+- 更新src ([efd98b4](https://github.com/UnHF/s3-sdk/commit/efd98b4))
+- 新增打包配置 ([524405c](https://github.com/UnHF/s3-sdk/commit/524405c))
+- 创建测试demo ([8a1680b](https://github.com/UnHF/s3-sdk/commit/8a1680b))
+- 重新配置目录结构 ([383fa74](https://github.com/UnHF/s3-sdk/commit/383fa74))
+- 删除umd类型 ([a5feca6](https://github.com/UnHF/s3-sdk/commit/a5feca6))
+- 抽出vo层 ([55c8efa](https://github.com/UnHF/s3-sdk/commit/55c8efa))
+
+### 🏡 Chore
+
+- **release:** V0.0.1 ([f220ab0](https://github.com/UnHF/s3-sdk/commit/f220ab0))
+
+### ❤️ Contributors
+
+- Heyongqi10 ([@xxhls](https://github.com/xxhls))
+
 ## v0.0.1
 
 
