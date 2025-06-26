@@ -1,0 +1,33 @@
+{
+  "name": "@unhf/s3-sdk-signature",
+  "version": "0.0.0",
+  "description": "A simple S3 SDK for Bun",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:UnHF/s3-sdk.git",
+    "directory": "packages/s3-sdk-signature"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "test": "vitest run --coverage"
+  },
+  "peerDependencies": {
+    "crypto": "1.0.1"
+  }
+}
