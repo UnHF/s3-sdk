@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.10
+
+[compare changes](https://github.com/UnHF/s3-sdk/compare/v0.0.9...v0.0.10)
+
+### 🚀 Enhancements
+
+- 删除文件夹 ([4817c3a](https://github.com/UnHF/s3-sdk/commit/4817c3a))
+
+### ❤️ Contributors
+
+- Heyongqi10 ([@xxhls](https://github.com/xxhls))
+
 ## v0.0.9
 
 [compare changes](https://github.com/UnHF/s3-sdk/compare/v0.0.8...v0.0.9)
