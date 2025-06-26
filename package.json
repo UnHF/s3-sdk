@@ -34,7 +34,8 @@
     "prepack": "npm run build",
     "release": "changelogen --release && npm publish && git push --follow-tags",
     "test": "npm run lint && npm run test:types && vitest run --coverage",
-    "test:types": "tsc --noEmit --skipLibCheck"
+    "test:types": "tsc --noEmit --skipLibCheck",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@types/bun": "1.1.17",
@@ -43,6 +44,7 @@
     "changelogen": "0.6.1",
     "eslint": "9.29.0",
     "eslint-config-unjs": "0.4.2",
+    "husky": "9.1.7",
     "prettier": "3.6.1",
     "typescript": "5.8.3",
     "vite": "7.0.0",

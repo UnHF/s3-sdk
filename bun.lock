@@ -10,6 +10,7 @@
         "changelogen": "0.6.1",
         "eslint": "9.29.0",
         "eslint-config-unjs": "0.4.2",
+        "husky": "9.1.7",
         "prettier": "3.6.1",
         "typescript": "5.8.3",
         "vite": "7.0.0",
@@ -842,6 +843,8 @@
     "http-proxy-agent": ["http-proxy-agent@7.0.2", "http://registry.m.jd.com/http-proxy-agent/download/http-proxy-agent-7.0.2.tgz", { "dependencies": { "agent-base": "^7.1.0", "debug": "^4.3.4" } }, ""],
 
     "https-proxy-agent": ["https-proxy-agent@7.0.6", "http://registry.m.jd.com/https-proxy-agent/download/https-proxy-agent-7.0.6.tgz", { "dependencies": { "agent-base": "^7.1.2", "debug": "4" } }, ""],
+
+    "husky": ["husky@9.1.7", "", { "bin": { "husky": "bin.js" } }, "sha512-5gs5ytaNjBrh5Ow3zrvdUUY+0VxIuWVL4i9irt6friV+BqdCfmV11CQTWMiBYWHbXhco+J1kHfTOUkePhCDvMA=="],
 
     "iconv-lite": ["iconv-lite@0.6.3", "http://registry.m.jd.com/iconv-lite/download/iconv-lite-0.6.3.tgz", { "dependencies": { "safer-buffer": ">= 2.1.2 < 3.0.0" } }, ""],
 
