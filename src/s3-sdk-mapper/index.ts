@@ -1,1 +1,1 @@
-export { default as BucketMapper } from './bucketMapper';
+export { default as BucketMapper } from "./bucket-mapper";

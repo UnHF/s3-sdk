@@ -1,40 +1,40 @@
-import { defineConfig } from 'vite';
-import { resolve } from 'path';
-import dts from 'vite-plugin-dts';
+import { defineConfig } from "vite";
+import { resolve } from "node:path";
+import dts from "vite-plugin-dts";
 
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
-      name: 'S3SDK',
+      entry: resolve(__dirname, "src/index.ts"),
+      name: "S3SDK",
       fileName: (format) => `index.${format}.js`,
-      formats: ['es', 'cjs']
+      formats: ["es", "cjs"],
     },
     rollupOptions: {
-      external: ['axios', 'crypto'],
+      external: ["axios", "crypto"],
       output: {
         globals: {
-          axios: 'axios',
-          crypto: 'crypto'
-        }
-      }
+          axios: "axios",
+          crypto: "crypto",
+        },
+      },
     },
     sourcemap: true,
-    outDir: 'dist',
-    emptyOutDir: true
+    outDir: "dist",
+    emptyOutDir: true,
   },
   plugins: [
     dts({
       insertTypesEntry: true,
-      outDir: 'dist',
+      outDir: "dist",
       rollupTypes: true,
-      bundledPackages: ['@types/*']
-    })
+      bundledPackages: ["@types/*"],
+    }),
   ],
   // 🔍 解析配置
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src')
-    }
-  }
+      "@": resolve(__dirname, "src"),
+    },
+  },
 });
