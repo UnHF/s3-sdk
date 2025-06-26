@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.0.3
+
+[compare changes](https://github.com/UnHF/s3-sdk/compare/v0.0.2...v0.0.3)
+
+### 🚀 Enhancements
+
+- 配置格式化 ([2ae5dfb](https://github.com/UnHF/s3-sdk/commit/2ae5dfb))
+- 配置husky ([31456b6](https://github.com/UnHF/s3-sdk/commit/31456b6))
+
+### ❤️ Contributors
+
+- Heyongqi10 ([@xxhls](https://github.com/xxhls))
+
 ## v0.0.2
 
 [compare changes](https://github.com/UnHF/s3-sdk/compare/v0.0.1...v0.0.2)
