@@ -1,11 +1,13 @@
-import { createSignature } from "@unhf/s3-sdk-signature";
-import { type Bucket } from "@unhf/s3-sdk-models";
 import axios, { type AxiosInstance } from 'axios';
+import { BucketMapper } from "@unhf/s3-sdk-mapper";
+import S3SDK from '@unhf/s3-sdk-abstract';
+import { type BucketListVO } from './vo';
 
-class S3SDK {
-    private accessKey: string;
-    private secretKey: string;
+class S3SDKImpl implements S3SDK {
+    accessKey: string;
+    secretKey: string;
     axiosInstance: AxiosInstance;
+    private bucketMapper: BucketMapper;
 
     constructor (
         accessKey: string, 
@@ -24,30 +26,31 @@ class S3SDK {
             },
             responseType: 'json',
         })
+        this.bucketMapper = new BucketMapper(this);
     }
 
-    async getService () {
-        const url = '/'
-        const date = new Date().toUTCString();
-        const signature = createSignature(
-            'GET',
-            '',
-            '',
-            date,
-            '',
-            url,
-            this.secretKey
-        )
-        const authorization = `jingdong ${this.accessKey}:${signature}`;
-        return await this.axiosInstance.get<{
-            Buckets: Bucket[];
-        }>(url, {
-            headers: {
-                Authorization: authorization,
-                Date: date,
+    async queryBucketList (): Promise<BucketListVO> {
+        const result = await this.bucketMapper.getService()
+        const { data } = result;
+        if (data.Buckets && Array.isArray(data.Buckets)) {
+            return {
+                code: 200,
+                message: 'Bucket list retrieved successfully',
+                data: data.Buckets.map(bucket => ({
+                    id: bucket.BucketId,
+                    name: bucket.Name,
+                    owner: bucket.OwnerId,
+                    createTime: bucket.CreationDate,
+                    region: bucket.Location
+                }))
             }
-        }).catch()
+        }
+        return {
+            code: 500,
+            message: 'Failed to retrieve bucket list',
+            data: []
+        }
     }
 }
 
-export default S3SDK;
+export { S3SDKImpl as S3SDK };

@@ -1,4 +1,4 @@
-import S3SDK from '.';
+import { S3SDK } from '.';
 import * as dotenv from 'dotenv';
 
 dotenv.config();
@@ -15,4 +15,13 @@ const s3 = new S3SDK(
     endpoint
 )
 
-s3.getService()
+s3.queryBucketList()
+    .then(response => {
+        console.log('Bucket List:', response.data);
+    })
+    .catch(error => {
+        console.error('Error fetching bucket list:', error);
+    })
+    .finally(() => {
+        console.log('Request completed');
+    });
