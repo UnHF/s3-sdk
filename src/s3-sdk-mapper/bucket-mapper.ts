@@ -1,6 +1,6 @@
 import S3SDK from "@/s3-sdk-abstract";
 import type { QueryObjectListDTO } from "@/s3-sdk-dto";
-import type { BucketModel, ObjectModel } from "@/s3-sdk-models";
+import type { GetBucketMO, GetServiceMO } from "@/s3-sdk-mo";
 import { createSignature } from "@/s3-sdk-signature";
 
 export default class BucketMapper {
@@ -20,9 +20,7 @@ export default class BucketMapper {
     );
     const authorization = `jingdong ${this.s3.accessKey}:${signature}`;
     return await this.s3.axiosInstance
-      .get<{
-        Buckets: BucketModel[];
-      }>(url, {
+      .get<GetServiceMO>(url, {
         headers: {
           Authorization: authorization,
           Date: date,
@@ -47,18 +45,7 @@ export default class BucketMapper {
     );
     const authorization = `jingdong ${this.s3.accessKey}:${signature}`;
     return await this.s3.axiosInstance
-      .get<{
-        Name: string;
-        Prefix: string;
-        Marker: string;
-        Delimiter: string;
-        StartTime: string;
-        EndTime: string;
-        MaxKeys: number;
-        HasNext: boolean;
-        Contents: ObjectModel[];
-        CommonPrefixes: string[];
-      }>(fullUrl, {
+      .get<GetBucketMO>(fullUrl, {
         headers: {
           Authorization: authorization,
           Date: date,
