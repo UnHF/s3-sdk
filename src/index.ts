@@ -1,1 +1,1 @@
-export { S3SDK } from "@unhf/s3-sdk-core";
+export { S3SDK } from "@/s3-sdk-core";

@@ -1,6 +1,6 @@
-import S3SDK from '@unhf/s3-sdk-abstract';
-import type { Bucket } from '@unhf/s3-sdk-models';
-import { createSignature } from "@unhf/s3-sdk-signature";
+import S3SDK from '@/s3-sdk-abstract';
+import type { Bucket } from '@/s3-sdk-models';
+import { createSignature } from "@/s3-sdk-signature";
 
 export default class BucketMapper {
     constructor(private s3: S3SDK) {}

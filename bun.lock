@@ -3,10 +3,6 @@
   "workspaces": {
     "": {
       "name": "s3-sdk",
-      "dependencies": {
-        "axios": "1.10.0",
-        "crypto": "1.0.1",
-      },
       "devDependencies": {
         "@types/bun": "1.1.17",
         "@types/node": "24.0.4",
@@ -15,47 +11,13 @@
         "eslint": "9.29.0",
         "eslint-config-unjs": "0.4.2",
         "prettier": "3.6.1",
+        "typescript": "5.8.3",
         "vite": "7.0.0",
         "vite-plugin-dts": "4.5.4",
         "vitest": "3.2.4",
       },
       "peerDependencies": {
-        "typescript": "5.8.3",
-      },
-    },
-    "packages/s3-sdk-abstract": {
-      "name": "@unhf/s3-sdk-abstract",
-      "version": "0.0.0",
-      "dependencies": {
         "axios": "1.10.0",
-      },
-    },
-    "packages/s3-sdk-core": {
-      "name": "@unhf/s3-sdk-core",
-      "version": "0.0.0",
-      "dependencies": {
-        "@unhf/s3-sdk-abstract": "workspace:*",
-        "@unhf/s3-sdk-models": "workspace:*",
-        "axios": "1.10.0",
-      },
-    },
-    "packages/s3-sdk-mapper": {
-      "name": "@unhf/s3-sdk-mapper",
-      "version": "0.0.0",
-      "dependencies": {
-        "@unhf/s3-sdk-abstract": "workspace:*",
-        "@unhf/s3-sdk-models": "workspace:*",
-        "@unhf/s3-sdk-signature": "workspace:*",
-      },
-    },
-    "packages/s3-sdk-models": {
-      "name": "@unhf/s3-sdk-models",
-      "version": "0.0.0",
-    },
-    "packages/s3-sdk-signature": {
-      "name": "@unhf/s3-sdk-signature",
-      "version": "0.0.0",
-      "dependencies": {
         "crypto": "1.0.1",
       },
     },
@@ -396,16 +358,6 @@
     "@typescript-eslint/utils": ["@typescript-eslint/utils@8.34.1", "http://registry.m.jd.com/@typescript-eslint/utils/download/@typescript-eslint/utils-8.34.1.tgz", { "dependencies": { "@eslint-community/eslint-utils": "^4.7.0", "@typescript-eslint/scope-manager": "8.34.1", "@typescript-eslint/types": "8.34.1", "@typescript-eslint/typescript-estree": "8.34.1" }, "peerDependencies": { "eslint": "^8.57.0 || ^9.0.0", "typescript": ">=4.8.4 <5.9.0" } }, ""],
 
     "@typescript-eslint/visitor-keys": ["@typescript-eslint/visitor-keys@8.34.1", "http://registry.m.jd.com/@typescript-eslint/visitor-keys/download/@typescript-eslint/visitor-keys-8.34.1.tgz", { "dependencies": { "@typescript-eslint/types": "8.34.1", "eslint-visitor-keys": "^4.2.1" } }, ""],
-
-    "@unhf/s3-sdk-abstract": ["@unhf/s3-sdk-abstract@workspace:packages/s3-sdk-abstract"],
-
-    "@unhf/s3-sdk-core": ["@unhf/s3-sdk-core@workspace:packages/s3-sdk-core"],
-
-    "@unhf/s3-sdk-mapper": ["@unhf/s3-sdk-mapper@workspace:packages/s3-sdk-mapper"],
-
-    "@unhf/s3-sdk-models": ["@unhf/s3-sdk-models@workspace:packages/s3-sdk-models"],
-
-    "@unhf/s3-sdk-signature": ["@unhf/s3-sdk-signature@workspace:packages/s3-sdk-signature"],
 
     "@vitest/browser": ["@vitest/browser@3.2.4", "http://registry.m.jd.com/@vitest/browser/download/@vitest/browser-3.2.4.tgz", { "dependencies": { "@testing-library/dom": "^10.4.0", "@testing-library/user-event": "^14.6.1", "@vitest/mocker": "3.2.4", "@vitest/utils": "3.2.4", "magic-string": "^0.30.17", "sirv": "^3.0.1", "tinyrainbow": "^2.0.0", "ws": "^8.18.2" }, "peerDependencies": { "playwright": "*", "vitest": "3.2.4", "webdriverio": "^7.0.0 || ^8.0.0 || ^9.0.0" } }, ""],
 

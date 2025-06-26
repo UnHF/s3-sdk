@@ -1,9 +1,6 @@
 {
   "name": "@unhf/s3-sdk",
   "version": "0.0.1",
-  "workspaces": [
-    "packages/*"
-  ],
   "description": "A simple S3 SDK for Bun",
   "repository": {
     "type": "git",

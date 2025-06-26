@@ -1,6 +1,6 @@
 import axios, { type AxiosInstance } from 'axios';
-import { BucketMapper } from "@unhf/s3-sdk-mapper";
-import S3SDK from '@unhf/s3-sdk-abstract';
+import { BucketMapper } from "@/s3-sdk-mapper";
+import S3SDK from '@/s3-sdk-abstract';
 import { type BucketListVO } from './vo';
 
 class S3SDKImpl implements S3SDK {
