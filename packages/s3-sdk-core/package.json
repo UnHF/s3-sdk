@@ -1,11 +1,11 @@
 {
-  "name": "@unhf/s3-sdk-models",
+  "name": "@unhf/s3-sdk-core",
   "version": "0.0.0",
   "description": "A simple S3 SDK for Bun",
   "repository": {
     "type": "git",
     "url": "git@github.com:UnHF/s3-sdk.git",
-    "directory": "packages/s3-sdk-models"
+    "directory": "packages/s3-sdk-core"
   },
   "publishConfig": {
     "access": "public",
@@ -24,6 +24,13 @@
     "dist"
   ],
   "scripts": {
-    "build": "unbuild"
+    "build": "unbuild",
+    "test": "vitest run --coverage"
+  },
+  "peerDependencies": {
+    "crypto": "1.0.1"
+  },
+  "devDependencies": {
+    "dotenv": "16.5.0"
   }
 }
