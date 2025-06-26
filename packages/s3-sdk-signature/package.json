@@ -24,10 +24,6 @@
     "dist"
   ],
   "scripts": {
-    "build": "unbuild",
-    "test": "vitest run --coverage"
-  },
-  "peerDependencies": {
-    "crypto": "1.0.1"
+    "build": "unbuild"
   }
 }
