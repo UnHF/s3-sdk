@@ -6,5 +6,8 @@
     "registry": "https://registry.npmjs.org"
   },
   "type": "module",
-  "main": "./src/index.ts"
+  "main": "./src/index.ts",
+  "dependencies": {
+    "axios": "1.10.0"
+  }
 }
