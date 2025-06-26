@@ -124,7 +124,6 @@ class S3SDKImpl implements S3SDK {
   async removeObject(params: RemoveObjectDTO): Promise<DeleteObjectVO> {
     const result = await this.objectMapper.deleteObject(params);
     const { status } = result;
-    console.log("Remove Object Result:", status);
     if (status === 204) {
       return {
         code: 200,

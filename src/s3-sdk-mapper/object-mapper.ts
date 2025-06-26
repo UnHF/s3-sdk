@@ -4,6 +4,7 @@ import type {
   RemoveObjectDTO,
   UploadObjectDTO,
 } from "@/s3-sdk-dto";
+import type { DeleteObjectMO, GetObjectMO, PutObjectMO } from "@/s3-sdk-mo";
 import { createSignature } from "@/s3-sdk-signature";
 import { createHash } from "crypto";
 
@@ -29,7 +30,7 @@ export default class ObjectMapper {
     );
     const authorization = `jingdong ${this.s3.accessKey}:${signature}`;
     return await this.s3.axiosInstance
-      .put(url, file, {
+      .put<PutObjectMO>(url, file, {
         headers: {
           Authorization: authorization,
           Date: date,
@@ -62,7 +63,7 @@ export default class ObjectMapper {
 
     const authorization = `jingdong ${this.s3.accessKey}:${signature}`;
     return await this.s3.axiosInstance
-      .get(url, {
+      .get<GetObjectMO>(url, {
         headers: {
           Authorization: authorization,
           Date: date,
@@ -93,7 +94,7 @@ export default class ObjectMapper {
 
     const authorization = `jingdong ${this.s3.accessKey}:${signature}`;
     return await this.s3.axiosInstance
-      .delete(url, {
+      .delete<DeleteObjectMO>(url, {
         headers: {
           Authorization: authorization,
           Date: date,

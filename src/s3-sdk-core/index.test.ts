@@ -34,14 +34,14 @@ const main = async () => {
 
   // s3.queryObject({
   //   bucketName: "hour-main-dev",
-  //   objectName: "圣剑_holy-sword.png",
+  //   objectName: "test.txt",
   // }).then((res) => {
   //   console.log("Query Object Result:", res);
   // });
 
   s3.removeObject({
     bucketName: "hour-main-dev",
-    objectName: "圣剑_holy-sword.png",
+    objectName: "test.txt",
   }).then((res) => {
     console.log("Remove Object Result:", res);
   });
