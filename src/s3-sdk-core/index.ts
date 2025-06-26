@@ -1,14 +1,15 @@
 import axios, { type AxiosInstance } from "axios";
-import { BucketMapper } from "@/s3-sdk-mapper";
+import { BucketMapper, ObjectMapper } from "@/s3-sdk-mapper";
 import S3SDK from "@/s3-sdk-abstract";
 import { type BucketListVO, type ObjectListVO } from "@/s3-sdk-vo";
-import type { QueryObjectListDTO } from "@/s3-sdk-dto";
+import type { QueryObjectListDTO, UploadObjectDTO } from "@/s3-sdk-dto";
 
 class S3SDKImpl implements S3SDK {
   accessKey: string;
   secretKey: string;
   axiosInstance: AxiosInstance;
   private bucketMapper: BucketMapper;
+  private objectMapper: ObjectMapper;
 
   constructor(
     accessKey: string,
@@ -28,6 +29,7 @@ class S3SDKImpl implements S3SDK {
       responseType: "json",
     });
     this.bucketMapper = new BucketMapper(this);
+    this.objectMapper = new ObjectMapper(this);
   }
 
   async queryBucketList(): Promise<BucketListVO> {
@@ -52,11 +54,8 @@ class S3SDKImpl implements S3SDK {
     };
   }
 
-  async queryObjectList(
-    bucketName: string,
-    options?: Partial<QueryObjectListDTO>,
-  ): Promise<ObjectListVO> {
-    const result = await this.bucketMapper.getBucket(bucketName, options);
+  async queryObjectList(params: QueryObjectListDTO): Promise<ObjectListVO> {
+    const result = await this.bucketMapper.getBucket(params);
     const { status, data } = result;
     if (status === 200) {
       return {
@@ -72,6 +71,21 @@ class S3SDKImpl implements S3SDK {
             size: item.Size,
           })),
         },
+      };
+    }
+    return {
+      code: 500,
+      message: "Failed to retrieve object list",
+    };
+  }
+
+  async uploadObject(params: UploadObjectDTO) {
+    const result = await this.objectMapper.putObject(params);
+    const { status } = result;
+    if (status === 200) {
+      return {
+        code: 200,
+        message: "Object uploaded successfully",
       };
     }
     return {

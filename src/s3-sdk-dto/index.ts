@@ -1,6 +1,15 @@
 export interface QueryObjectListDTO {
-  marker: string;
-  "max-keys": string;
-  prefix: string;
-  delimiter: string;
+  bucketName: string;
+  options?: Partial<{
+    marker: string;
+    "max-keys": string;
+    prefix: string;
+    delimiter: string;
+  }>;
+}
+
+export interface UploadObjectDTO {
+  bucketName: string;
+  objectName: string;
+  file: Buffer<ArrayBufferLike>;
 }

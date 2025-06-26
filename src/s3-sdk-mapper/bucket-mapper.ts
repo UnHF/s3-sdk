@@ -9,12 +9,15 @@ export default class BucketMapper {
   async getService() {
     const url = "/";
     const date = new Date().toUTCString();
+    const contentMd5 = "";
+    const contentType = "";
+    const canonicalizedHeaders = "";
     const signature = createSignature(
       "GET",
-      "",
-      "",
+      contentMd5,
+      contentType,
       date,
-      "",
+      canonicalizedHeaders,
       url,
       this.s3.secretKey,
     );
@@ -29,17 +32,21 @@ export default class BucketMapper {
       .catch();
   }
 
-  async getBucket(bucketName: string, options?: Partial<QueryObjectListDTO>) {
+  async getBucket(params: QueryObjectListDTO) {
+    const { bucketName, options = {} } = params;
     const url = `/${bucketName}`;
     const queryParams = new URLSearchParams(options).toString();
     const fullUrl = queryParams ? `${url}?${queryParams}` : url;
     const date = new Date().toUTCString();
+    const contentMd5 = "";
+    const contentType = "";
+    const canonicalizedHeaders = "";
     const signature = createSignature(
       "GET",
-      "",
-      "",
+      contentMd5,
+      contentType,
       date,
-      "",
+      canonicalizedHeaders,
       url,
       this.s3.secretKey,
     );

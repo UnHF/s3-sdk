@@ -1,5 +1,7 @@
 import { S3SDK } from ".";
 import * as dotenv from "dotenv";
+import fs from "node:fs";
+import path from "node:path";
 
 dotenv.config();
 
@@ -11,15 +13,24 @@ const endpoint = process.env.S3_ENDPOINT || "";
 const s3 = new S3SDK(accessKey, secretKey, host, endpoint);
 
 const main = async () => {
-  s3.queryObjectList("hour-main-dev", {
-    prefix: "exchangeCoupon",
-  })
-    .then((result) => {
-      console.log("Object List:", result);
-    })
-    .catch((error) => {
-      console.error("Error querying object list:", error);
-    });
+  s3.queryBucketList().then((res) => {
+    console.log("Bucket List:", res);
+  });
+
+  s3.queryObjectList({
+    bucketName: "hour-main-dev",
+    options: {
+      prefix: "test.txt",
+    },
+  }).then((res) => {
+    console.log("Object List:", res);
+  });
+
+  s3.uploadObject({
+    bucketName: "hour-main-dev",
+    objectName: "test.txt",
+    file: fs.readFileSync(path.resolve(__dirname, "test.txt")),
+  });
 };
 
 main();
