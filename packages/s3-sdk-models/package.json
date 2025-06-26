@@ -1,18 +1,10 @@
 {
   "name": "@unhf/s3-sdk-models",
   "version": "0.0.0",
-  "description": "A simple S3 SDK for Bun",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:UnHF/s3-sdk.git",
-    "directory": "packages/s3-sdk-models"
-  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
-  "license": "MIT",
-  "sideEffects": false,
   "type": "module",
   "exports": {
     ".": {
