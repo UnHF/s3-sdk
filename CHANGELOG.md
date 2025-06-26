@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.7
+
+[compare changes](https://github.com/UnHF/s3-sdk/compare/v0.0.6...v0.0.7)
+
+### 🚀 Enhancements
+
+- 抽离MapperObj ([411a983](https://github.com/UnHF/s3-sdk/commit/411a983))
+
+### ❤️ Contributors
+
+- Heyongqi10 ([@xxhls](https://github.com/xxhls))
+
 ## v0.0.6
 
 [compare changes](https://github.com/UnHF/s3-sdk/compare/v0.0.5...v0.0.6)
