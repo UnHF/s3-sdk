@@ -8,7 +8,7 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'S3SDK',
       fileName: (format) => `index.${format}.js`,
-      formats: ['es', 'cjs', 'umd']
+      formats: ['es', 'cjs']
     },
     rollupOptions: {
       external: ['axios', 'crypto'],
@@ -26,7 +26,9 @@ export default defineConfig({
   plugins: [
     dts({
       insertTypesEntry: true,
-      outDir: 'dist'
+      outDir: 'dist',
+      rollupTypes: true,
+      bundledPackages: ['@types/*']
     })
   ],
   // 🔍 解析配置
