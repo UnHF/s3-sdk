@@ -37,9 +37,9 @@ export function createSignature(
   contentMd5: string,
   contentType: string,
   date: string,
-  secretKey: string,
   canonicalizedHeaders: string,
-  canonicalizedResource: string
+  canonicalizedResource: string,
+  secretKey: string,
 ): string {
   // 🧩 构建待签名字符串
   // 📋 格式: HTTP-Verb + "\n" + Content-MD5 + "\n" + Content-Type + "\n" + Date + "\n" + CanonicalizedHeaders + CanonicalizedResource
