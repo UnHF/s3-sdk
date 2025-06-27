@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.12
+
+[compare changes](https://github.com/UnHF/s3-sdk/compare/v0.0.11...v0.0.12)
+
+### 🚀 Enhancements
+
+- 优化注释和介绍 ([07ec3dc](https://github.com/UnHF/s3-sdk/commit/07ec3dc))
+
+### ❤️ Contributors
+
+- Heyongqi10 ([@xxhls](https://github.com/xxhls))
+
 ## v0.0.11
 
 [compare changes](https://github.com/UnHF/s3-sdk/compare/v0.0.10...v0.0.11)
