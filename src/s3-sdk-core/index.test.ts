@@ -1,7 +1,5 @@
 import { S3SDK } from ".";
 import * as dotenv from "dotenv";
-import fs from "node:fs";
-import path from "node:path";
 
 dotenv.config();
 
